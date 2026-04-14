@@ -452,11 +452,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/aron/Documents/Web Dev Training/notes-app-react-dotnet/backend/NotesAppReactDotnet/NotesAppReactDotnet.csproj",
+      "projectUniqueName": "/home/aron/Documents/Web Dev Training/notes-app-react-dotnet/backend/NotesAppReactDotnet.csproj",
       "projectName": "NotesAppReactDotnet",
-      "projectPath": "/home/aron/Documents/Web Dev Training/notes-app-react-dotnet/backend/NotesAppReactDotnet/NotesAppReactDotnet.csproj",
+      "projectPath": "/home/aron/Documents/Web Dev Training/notes-app-react-dotnet/backend/NotesAppReactDotnet.csproj",
       "packagesPath": "/home/aron/.nuget/packages/",
-      "outputPath": "/home/aron/Documents/Web Dev Training/notes-app-react-dotnet/backend/NotesAppReactDotnet/obj/",
+      "outputPath": "/home/aron/Documents/Web Dev Training/notes-app-react-dotnet/backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/aron/.nuget/NuGet/NuGet.Config"
@@ -478,7 +478,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -500,6 +506,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.25, 8.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -508,7 +520,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.125/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.104/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
