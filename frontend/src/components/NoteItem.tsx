@@ -1,14 +1,19 @@
-interface NoteProps {
-  color: string;
+import { Link } from "react-router-dom";
+import type { Note } from "../types/noteItem";
+
+interface NoteItemProps {
+  color?: string;
+  note: Note;
 }
 
-const Note = ({ color }: NoteProps) => {
+const NoteItem = ({ color, note }: NoteItemProps) => {
   return (
-    <div
-      className={`flex flex-col w-full max-w-42 h-50 p-4 rounded-xl ${color ? color : "bg-surface"}`}
+    <Link
+      to={"/"}
+      className={`flex flex-col max-w-50 w-full h-50 p-4 rounded-xl ${color ? color : "bg-surface"} border focus:border-blue-600 border-transparent`}
     >
       <h3 className="text-base text-text-primary font-semibold">
-        Getting started
+        {note.Title}
       </h3>
       <div className="w-full h-0.5 my-1.5 bg-border"></div>
       <span className="max-h-full text-sm leading-base overflow-hidden text-text-primary">
@@ -17,8 +22,8 @@ const Note = ({ color }: NoteProps) => {
         molestias consectetur cupiditate officia assumenda eos alias ab nesciunt
         voluptatibus commodi.
       </span>
-    </div>
+    </Link>
   );
 };
 
-export default Note;
+export default NoteItem;

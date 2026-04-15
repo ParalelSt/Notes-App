@@ -1,15 +1,20 @@
-import ImportantNote from "./components/ImportantNote";
 import Layout from "./components/layout/Layout";
-import Note from "./components/Note";
+import Nav from "./components/layout/Nav";
+import Home from "./components/Pages/Home";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     //ADD ABSOLUTE IMPORTS
 
-    <Layout>
-      <Note />
-      <ImportantNote />
-    </Layout>
+    <>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Layout>
+      <Nav />
+    </>
   );
 }
 
