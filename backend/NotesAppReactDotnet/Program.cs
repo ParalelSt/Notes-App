@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NotesAppReactDotnet.Data;
 using NotesAppReactDotnet.Service;
+using NotesAppReactDotnet.Service.Auth;
 using NotesAppReactDotnet.Service.Note;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<JwtTokenService>();
 builder.Services.AddScoped<INoteService, NoteService > ();
+builder.Services.AddScoped<IUserService, UserService>();
 
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings["Secret"]!;

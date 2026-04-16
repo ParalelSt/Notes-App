@@ -13,4 +13,10 @@ public class NoteItem
     public DateTime CreatedAt { get; set; }
     
     public DateTime UpdatedAt { get; set; }
+    
+    /*
+     ADD FOR AUTH
+     
+    public int UserId { get; set; }
+    public User user { get; set; }*/
 }

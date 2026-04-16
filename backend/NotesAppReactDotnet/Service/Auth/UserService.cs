@@ -56,9 +56,9 @@ public class UserService: IUserService
         //Performance loss
         var username = dto.Username.ToLower().Trim();
 
-        var existingUserName = _dbContext.Users.FirstOrDefault(u => u.Username == dto.Username);
+        var existingUserName = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == dto.Username);
         
-        var existingEmail = _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
+        var existingEmail = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
 
         if (existingUserName != null)
         {

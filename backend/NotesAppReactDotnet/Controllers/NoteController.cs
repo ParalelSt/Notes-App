@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using NotesAppReactDotnet.DTOs;
-using NotesAppReactDotnet.Service;
 using NotesAppReactDotnet.Service.Note;
 
 namespace NotesAppReactDotnet.Controllers;
