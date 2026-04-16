@@ -11,5 +11,6 @@ public class AppDbContext:DbContext
     }
     
     public DbSet<NoteItem> Notes { get; set; }
+    public DbSet<User> Users { get; set; }
     
 }

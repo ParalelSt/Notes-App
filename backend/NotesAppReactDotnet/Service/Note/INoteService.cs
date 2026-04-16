@@ -1,6 +1,6 @@
 using NotesAppReactDotnet.DTOs;
 
-namespace NotesAppReactDotnet.Service;
+namespace NotesAppReactDotnet.Service.Note;
 
 public interface INoteService
 {

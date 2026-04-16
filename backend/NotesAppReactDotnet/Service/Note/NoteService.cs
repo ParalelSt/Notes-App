@@ -1,10 +1,9 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using NotesAppReactDotnet.Data;
 using NotesAppReactDotnet.DTOs;
 using NotesAppReactDotnet.Entities;
 
-namespace NotesAppReactDotnet.Service;
+namespace NotesAppReactDotnet.Service.Note;
 
 public class NoteService: INoteService
 {

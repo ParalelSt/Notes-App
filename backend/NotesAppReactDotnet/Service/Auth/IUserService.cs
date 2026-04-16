@@ -1,6 +1,6 @@
 using NotesAppReactDotnet.DTOs.Auth;
 
-namespace NotesAppReactDotnet.Service;
+namespace NotesAppReactDotnet.Service.Auth;
 
 public interface IUserService
 {

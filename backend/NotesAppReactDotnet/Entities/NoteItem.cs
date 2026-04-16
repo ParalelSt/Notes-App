@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices.JavaScript;
+
 namespace NotesAppReactDotnet.Entities;
 
 public class NoteItem
@@ -7,4 +9,8 @@ public class NoteItem
     public string Title { get; set; }
     
     public string Content { get; set; }
+    
+    public DateTime CreatedAt { get; set; }
+    
+    public DateTime UpdatedAt { get; set; }
 }
