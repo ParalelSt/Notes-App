@@ -15,11 +15,11 @@ public class UserController : ControllerBase
         _userService = userService;
     }
 
-    [HttpPost("register-user")]
+    [HttpPost("register")]
     public async Task<ActionResult<RegisterResDto>> Register(RegisterReqDto dto)
         => await _userService.Register(dto);
 
-    [HttpPost("log-in-user")]
+    [HttpPost("log-in")]
     public async Task<ActionResult<LoginResDto>> LogIn(LoginReqDto dto)
         => await _userService.LogIn(dto);
 }

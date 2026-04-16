@@ -10,7 +10,7 @@ const NoteItem = ({ color, note }: NoteItemProps) => {
   return (
     <Link
       to={"/"}
-      className={`flex flex-col max-w-50 w-full h-50 p-4 rounded-xl ${color ? color : "bg-surface"} border focus:border-blue-600 border-transparent`}
+      className={`flex flex-col max-w-50 w-full h-50 p-4 shadow-sm rounded-xl ${color ? color : "bg-surface"} border focus:border-blue-600 border-transparent`}
     >
       <h3 className="text-base text-text-primary font-semibold">
         {note.Title}
