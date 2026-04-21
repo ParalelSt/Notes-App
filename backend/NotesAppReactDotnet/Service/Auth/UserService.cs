@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using NotesAppReactDotnet.Data;
 using NotesAppReactDotnet.DTOs.Auth;
 using NotesAppReactDotnet.Entities;
+using NotesAppReactDotnet.Exceptions;
 
 namespace NotesAppReactDotnet.Service.Auth;
 
@@ -19,18 +20,18 @@ public class UserService: IUserService
     {
         var user = await _dbContext.Users.FirstOrDefaultAsync(u =>
             u.Email == dto.Identifier.ToLower()
-            || u.Username.ToLower() == dto.Identifier);
+            || u.Username == dto.Identifier.ToLower());
 
         if (user == null)
         {
-            throw new ArgumentException("Invalid Credentials");
+            throw new UnauthorizedException("Invalid Credentials");
         }
 
         var isValid = BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash);
 
         if (!isValid)
         {
-            throw new ArgumentException("Invalid Credentials");
+            throw new UnauthorizedException("Invalid Credentials");
         }
 
         var token = _jwtTokenService.GenerateToken(user);
@@ -47,7 +48,7 @@ public class UserService: IUserService
     {
         if (dto.Password != dto.ConfirmPassword)
         {
-            throw new ArgumentException("Passwords must match");
+            throw new CustomInvalidOperationException("Passwords must match");
         }
         
         var password = BCrypt.Net.BCrypt.HashPassword(dto.Password);
@@ -62,12 +63,12 @@ public class UserService: IUserService
 
         if (existingUserName != null)
         {
-            throw new ArgumentException("A user with that username already exists");
+            throw new CustomInvalidOperationException("A user with that username already exists");
         }
         
         if (existingEmail != null)
         {
-            throw new ArgumentException("A user with that email already exists");
+            throw new CustomInvalidOperationException("A user with that email already exists");
         }
 
         var newUser = new User

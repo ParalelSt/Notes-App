@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using NotesAppReactDotnet.Data;
 using NotesAppReactDotnet.DTOs;
 using NotesAppReactDotnet.Entities;
+using NotesAppReactDotnet.Exceptions;
 
 namespace NotesAppReactDotnet.Service.Note;
 
@@ -18,7 +19,7 @@ public class NoteService: INoteService
     {
         if (string.IsNullOrEmpty(dto.Title))
         {
-            throw new ArgumentException("Title can not be empty");
+            throw new CustomInvalidOperationException("Title can not be empty");
         }
         
         var newNote = new NoteItem
@@ -66,7 +67,7 @@ public class NoteService: INoteService
 
         if (note == null)
         {
-            throw new NullReferenceException("Note not found");
+            throw new NotFoundException("Note not found");
         }
 
         note.Title = dto.Title;
