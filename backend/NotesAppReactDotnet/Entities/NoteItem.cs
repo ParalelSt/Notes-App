@@ -14,9 +14,6 @@ public class NoteItem
     
     public DateTime UpdatedAt { get; set; }
     
-    /*
-     ADD FOR AUTH
      
     public int UserId { get; set; }
-    public User user { get; set; }*/
 }

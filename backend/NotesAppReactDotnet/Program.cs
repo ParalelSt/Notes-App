@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NotesAppReactDotnet.Data;
+using NotesAppReactDotnet.Extensions;
 using NotesAppReactDotnet.Middleware;
 using NotesAppReactDotnet.Service;
 using NotesAppReactDotnet.Service.Auth;
